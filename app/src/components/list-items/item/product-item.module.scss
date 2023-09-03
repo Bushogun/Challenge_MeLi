@@ -1,0 +1,11 @@
+@use '../../../styles/colors.module.scss' as *;
+
+.productContainer{
+    margin-top: 10px; 
+    margin-bottom: 10px;
+    hr{
+        width: 95%;
+        border-color: rgb(255, 255, 255);
+        
+    }
+}
