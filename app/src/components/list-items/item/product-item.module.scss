@@ -46,6 +46,7 @@
         .title{
             padding-top: 10px;
             font-size: 1.6em;
+            max-width: 20em;
             color: $color__gray--2;
         }
         .quantity{
@@ -60,6 +61,7 @@
         display: block;
         margin-left: auto;
         margin-right: auto;
+        min-width: 10em;
         .state_name {
             padding-top: 3rem;
             font-size: 1em;

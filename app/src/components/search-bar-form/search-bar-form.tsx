@@ -1,35 +1,33 @@
-import React from "react";
-import { useRouter } from 'next/router';
+import React, { useState } from "react";
 import { FiSearch } from 'react-icons/fi'
+import { useProductContext } from "@/src/context/ProductContext";
 import styles from './search-bar-form.module.scss'
 
-interface SearchBarFormProps {
-    onSubmit: (event: React.FormEvent<HTMLFormElement>) => void
-    query: string
-    onChange: (event: React.ChangeEvent<HTMLInputElement>) => void
-    errorText: string
-}
+export const SearchBarForm = () => {
+    const [query, setQuery] = useState("");
+    const { createSearch } = useProductContext();
 
-export const SearchBarForm = ({ onSubmit, query, onChange}: SearchBarFormProps) =>{
-    const router = useRouter()
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        createSearch(query);
+    }
 
-    // const onSubmit = (e:any) =>{
-    //     e.preventDefault()
-    //     router.push("/items");
-    // }
-    
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setQuery(e.target.value);
+    }
+
     return (
-        <form className={styles.container} onSubmit={onSubmit}>
+        <form className={styles.container} onSubmit={handleSubmit}>
             <div className="input-group">
                 <input
-                className="form-control"
-                type="text"
-                name={'search'}
-                placeholder="Buscar productos"
-                value={query}
-                onChange={onChange}
-                required={true}
-                alt="search product"
+                    type="text"
+                    className="form-control"
+                    name={'search'}
+                    placeholder="Buscar productos"
+                    value={query}
+                    onChange={handleChange}
+                    required={true}
+                    alt="search product"
                 />
 
                 <div className={'input-group-append'}>
