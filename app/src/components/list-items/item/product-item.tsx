@@ -1,4 +1,5 @@
 import React from 'react';
+import { TbTruckDelivery } from 'react-icons/tb'
 import styles from './product-item.module.scss'
 
 
@@ -10,9 +11,8 @@ export const ProductItem = () => {
             <img src="https://http2.mlstatic.com/D_619667-MLA47781882790_102021-I.jpg"
             alt="image product  Apple iPhone 13 (128 Gb) - Azul" width="180" height="180" />
             <div className={styles.container_state_info}>
-              <p className={styles.condition}>new</p>
-              <p className={styles.free_shipping}>true</p>
-              {/* TbTruckDelivery */}
+              <p className={styles.condition} title="Atículo nuevo">New</p>
+              <p className={styles.free_shipping} title="Envío gratis"><TbTruckDelivery /></p> 
             </div>
           </div>
           <div className={styles.product_description}>

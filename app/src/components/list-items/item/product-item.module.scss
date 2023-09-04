@@ -18,12 +18,19 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                .free_shipping{
+                    padding-top: 5px;
+                    color: $color__green--1;
+                    font-size: 30px;
+                    cursor: pointer;
+                }
                 .condition{
                     padding: 5px;
                     background-color: $color__green--1;
                     color: #fff;
                     margin: 0px 10px ;
                     border-radius: 5px;
+                    cursor: pointer;
                 }
             }
         }

@@ -3,6 +3,8 @@ import { Navbar } from "../navbar/Navbar"
 import Head from 'next/head'
 import styles from './layout.module.scss'
 import { ListItems } from '../list-items/list-product-items'
+import { SortSelect } from '../sort-select/sort-select'
+import PriceFilter from '../price-filter/price-filter'
 
 type Props = {
 	children?: ReactNode
@@ -23,8 +25,12 @@ function Layout( { children, title = 'Mercado Libre' }: Props) {
     <header>
       <Navbar />
     </header>
-    <main className={styles.container}>
-      <ListItems />
+    <main>
+      <div className={styles.container}>
+      {/* <PriceFilter /> */}
+        <SortSelect />
+        <ListItems />
+      </div>
     </main>
     </>
   )
