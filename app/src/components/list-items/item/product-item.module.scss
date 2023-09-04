@@ -1,17 +1,19 @@
 @use '../../../styles/colors.module.scss' as *;
 
 .product_container{
-    margin-top: 10px; 
+    margin-top: 4em; 
     margin-bottom: 10px;
     hr{
         width: 95%;
-        border-color: rgb(255, 255, 255);
+        border-color: #fff;
     }
     .info_container{ 
         display: flex;
-        gap: 2vh;
 
         .container_sell_info{
+            img{
+                margin: 15px;
+            }
             .container_state_info{
                 display: flex;
                 justify-content: center;
@@ -61,4 +63,108 @@
             color: $color__gray--3;
         }
     }
+
+    @media screen and (max-width: 768px) {
+        hr{
+            width: 88%;
+        }
+        .info_container{ 
+            display: block;
+            .container_sell_info{
+                img{
+                    display: flex;
+                    margin: auto;
+                    margin-top: 2em;
+                }
+                display: block;
+                align-items: center;
+                .container_state_info{
+                    display: flex;
+                }
+            }
+	    }
+
+        .product_description{
+            padding: 0em 5em;
+            .title_price{
+                padding-top: 1rem;
+                font-size: 2.2em;
+            }
+            .title{
+                padding-top: 8px;
+                font-size: 1.2em;
+            }
+            .quantity{
+                padding-top: 5px;
+                font-size: 0.9em;
+                color: $color__green--1;
+            }
+        }
+
+        .container_details{
+            display: flex;
+            justify-content: space-around;
+            padding-top: 15px;
+            .state_name {
+                padding-top: 0rem;
+                font-size: 1em;
+            }
+            .city_name {
+                font-size: 1em;
+            }
+        }
+
+    }
+
+	@media screen and (max-width: 320px) {
+        hr{
+            width: 80%;
+        }
+	}
+    .info_container{ 
+        display: block;
+        .container_sell_info{
+            img{
+                display: flex;
+                margin: auto;
+                margin-top: 2em;
+            }
+            display: block;
+            align-items: center;
+            .container_state_info{
+                display: flex;
+            }
+        }
+    }
+
+    .product_description{
+        padding: 0em 1em;
+        .title_price{
+            padding-top: 1rem;
+            font-size: 1.8em;
+        }
+        .title{
+            padding-top: 6px;
+            font-size: 1em;
+        }
+        .quantity{
+            padding-top: 6px;
+            font-size: 0.9em;
+            color: $color__green--1;
+        }
+    }
+
+    .container_details{
+        display: flex;
+        justify-content: space-around;
+        padding-top: 10px;
+        .state_name {
+            padding-top: 0rem;
+            font-size: 0.8em;
+        }
+        .city_name {
+            font-size: 0.8em;
+        }
+    }
+
 }

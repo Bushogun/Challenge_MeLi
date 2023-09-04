@@ -9,4 +9,9 @@
 	a {
 		padding-right: 2rem;
 	  }
+	  @media screen and (max-width: 320px) {
+		a {
+			display: none;
+		  }
+	  }
 }
