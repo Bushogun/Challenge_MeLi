@@ -116,55 +116,107 @@
 
     }
 
+    @media screen and (max-width: 422px) {
+        hr{
+            width: 80%;
+        }
+	
+        .info_container{ 
+            display: block;
+            .container_sell_info{
+                img{
+                    display: flex;
+                    margin: auto;
+                    margin-top: 2em;
+                }
+                display: block;
+                align-items: center;
+                .container_state_info{
+                    display: flex;
+                }
+            }
+        }
+
+        .product_description{
+            padding: 0em 1em;
+            .title_price{
+                padding-top: 1rem;
+                font-size: 1.8em;
+            }
+            .title{
+                padding-top: 6px;
+                font-size: 1em;
+            }
+            .quantity{
+                padding-top: 6px;
+                font-size: 0.9em;
+                color: $color__green--1;
+            }
+        }
+
+        .container_details{
+            display: flex;
+            justify-content: space-around;
+            padding-top: 10px;
+            .state_name {
+                padding-top: 0rem;
+                font-size: 0.8em;
+            }
+            .city_name {
+                font-size: 0.8em;
+            }
+        }
+    }
+
 	@media screen and (max-width: 320px) {
         hr{
             width: 80%;
         }
-	}
-    .info_container{ 
-        display: block;
-        .container_sell_info{
-            img{
-                display: flex;
-                margin: auto;
-                margin-top: 2em;
-            }
+	
+        .info_container{ 
             display: block;
-            align-items: center;
-            .container_state_info{
-                display: flex;
+            .container_sell_info{
+                img{
+                    display: flex;
+                    margin: auto;
+                    margin-top: 2em;
+                }
+                display: block;
+                align-items: center;
+                .container_state_info{
+                    display: flex;
+                }
+            }
+        }
+
+        .product_description{
+            padding: 0em 1em;
+            .title_price{
+                padding-top: 1rem;
+                font-size: 1.8em;
+            }
+            .title{
+                padding-top: 6px;
+                font-size: 1em;
+            }
+            .quantity{
+                padding-top: 6px;
+                font-size: 0.9em;
+                color: $color__green--1;
+            }
+        }
+
+        .container_details{
+            display: flex;
+            justify-content: space-around;
+            padding-top: 10px;
+            .state_name {
+                padding-top: 0rem;
+                font-size: 0.8em;
+            }
+            .city_name {
+                font-size: 0.8em;
             }
         }
     }
-
-    .product_description{
-        padding: 0em 1em;
-        .title_price{
-            padding-top: 1rem;
-            font-size: 1.8em;
-        }
-        .title{
-            padding-top: 6px;
-            font-size: 1em;
-        }
-        .quantity{
-            padding-top: 6px;
-            font-size: 0.9em;
-            color: $color__green--1;
-        }
-    }
-
-    .container_details{
-        display: flex;
-        justify-content: space-around;
-        padding-top: 10px;
-        .state_name {
-            padding-top: 0rem;
-            font-size: 0.8em;
-        }
-        .city_name {
-            font-size: 0.8em;
-        }
-    }
-
 }
