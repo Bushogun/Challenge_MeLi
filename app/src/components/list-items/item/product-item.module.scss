@@ -1,11 +1,64 @@
 @use '../../../styles/colors.module.scss' as *;
 
-.productContainer{
+.product_container{
     margin-top: 10px; 
     margin-bottom: 10px;
     hr{
         width: 95%;
         border-color: rgb(255, 255, 255);
-        
+    }
+    .info_container{ 
+        display: flex;
+        gap: 2vh;
+
+        .container_sell_info{
+            .container_state_info{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                .condition{
+                    padding: 5px;
+                    background-color: $color__green--1;
+                    color: #fff;
+                    margin: 0px 10px ;
+                    border-radius: 5px;
+                }
+            }
+        }
+    }
+
+    .product_description{
+        display: block; 
+        .title_price{
+            padding-top: 3rem;
+            font-size: 2.6em;
+            color: $color__gray--1;
+        }
+        .title{
+            padding-top: 10px;
+            font-size: 1.6em;
+            color: $color__gray--2;
+        }
+        .quantity{
+            padding-top: 10px;
+            font-size: 1.1em;
+            font-weight: 500;
+            color: $color__green--1;
+        }
+    }
+
+    .container_details{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        .state_name {
+            padding-top: 3rem;
+            font-size: 1em;
+            color: $color__gray--3;
+        }
+        .city_name {
+            font-size: 1em;
+            color: $color__gray--3;
+        }
     }
 }
