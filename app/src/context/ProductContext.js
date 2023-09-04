@@ -19,7 +19,7 @@ export const ProductProvider = ({ children }) => {
         try {
           setLoading(true);
           const response = await fetch(
-            `https://api.mercadolibre.com/sites/MLA/search?q=${searchQuery}&limit=4`
+            `https://api.mercadolibre.com/sites/MLA/search?q=${searchQuery}&limit=20`
           );
           if (!response.ok) {
             throw new Error('Error al cargar productos');
