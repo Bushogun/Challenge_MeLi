@@ -11,11 +11,6 @@ export const ListItems = ({ products }: Props) => {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 4;
 
-  const indexOfLastItem = currentPage * itemsPerPage;
-  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-
-  const currentProducts = products.slice(indexOfFirstItem, indexOfLastItem);
-
   const paginate = (pageNumber: number) => {
     setCurrentPage(pageNumber);
   };

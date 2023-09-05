@@ -3,21 +3,17 @@ import Head from 'next/head'
 import { Navbar } from "../navbar/Navbar"
 import { useProductContext } from "@/src/context/ProductContext";
 import { ListItems } from '../list-items/list-product-items'
-import { SortSelect } from '../sort-select/sort-select'
+import { SortFilter } from '../sort-filter/sort-filter'
 import PriceFilter from '../price-filter/price-filter'
 import styles from './layout.module.scss'
-
 
 type Props = {
 	children?: ReactNode
 	title?: string
 }
 
-// const { ProductProvider } = useProductContext();
-
-
 function Layout( { children, title = 'Mercado Libre' }: Props) {
-  const { products, loading, error } = useProductContext();
+  const { products, loading, error, availableSorts } = useProductContext();
   return (
     <>
     <Head>
@@ -34,7 +30,7 @@ function Layout( { children, title = 'Mercado Libre' }: Props) {
     <main>
       <div className={styles.container}>
       {/* <PriceFilter /> */}
-        <SortSelect />
+        <SortFilter availableSorts={availableSorts} defaultValue="default"/>
         {loading ? (
           <p>Loading...</p>
         ) : error ? (

@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { SearchBarForm } from '@/src/components/search-bar-form/search-bar-form'
+import { SearchBarForm } from '@/src/components/navbar/search-bar-form/search-bar-form'
 import styles from './navbar.module.scss'
 
 export const Navbar = () => {

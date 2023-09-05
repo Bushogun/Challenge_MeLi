@@ -100,14 +100,17 @@
         .product_description{
             padding: 0em 5em;
             .title_price{
+                text-align: center;
                 padding-top: 1rem;
                 font-size: 2.2em;
             }
             .title{
+                text-align: center;
                 padding-top: 8px;
                 font-size: 1.2em;
             }
             .quantity{
+                text-align: center;
                 padding-top: 5px;
                 font-size: 0.9em;
                 color: $color__green--1;
@@ -153,14 +156,17 @@
         .product_description{
             padding: 0em 1em;
             .title_price{
+                text-align: center;
                 padding-top: 1rem;
                 font-size: 1.8em;
             }
             .title{
+                text-align: center;
                 padding-top: 6px;
                 font-size: 1em;
             }
             .quantity{
+                text-align: center;
                 padding-top: 6px;
                 font-size: 0.9em;
                 color: $color__green--1;
@@ -205,14 +211,17 @@
         .product_description{
             padding: 0em 1em;
             .title_price{
+                text-align: center;
                 padding-top: 1rem;
                 font-size: 1.8em;
             }
             .title{
+                text-align: center;
                 padding-top: 6px;
                 font-size: 1em;
             }
             .quantity{
+                text-align: center;
                 padding-top: 6px;
                 font-size: 0.9em;
                 color: $color__green--1;
