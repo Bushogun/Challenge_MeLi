@@ -4,16 +4,12 @@ import styles from './sort-filter.module.scss';
 import { useProductContext } from "@/src/context/ProductContext";
 
 interface SortFilterProps {
-  availableSorts: ISort[]; // Agrega esta propiedad a la interfaz de props
+  availableSorts: ISort[];
   defaultValue: string;
 }
 
-export const SortFilter = ({ defaultValue }: SortFilterProps) => {
-  const { availableSorts, applySort } = useProductContext();
-
-  if (availableSorts.length === 0) {
-    return null;
-  }
+export const SortFilter = ({ availableSorts, defaultValue }: SortFilterProps) => {
+  const { applySort } = useProductContext();
 
   return (
     <div className={styles.sort}>
@@ -24,7 +20,7 @@ export const SortFilter = ({ defaultValue }: SortFilterProps) => {
         onChange={(e) => applySort(e.target.value)}
       >
         <option value={defaultValue}>Selecciona</option>
-        {availableSorts.map((availableSort:any) => (
+        {availableSorts.map((availableSort) => (
           <option key={availableSort.id} value={availableSort.id}>
             {availableSort.name}
           </option>

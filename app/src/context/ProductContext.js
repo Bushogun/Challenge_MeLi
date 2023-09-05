@@ -13,6 +13,8 @@ export const ProductProvider = ({ children }) => {
   const [availablePriceFilter, setAvailablePriceFilter] = useState([]);
   const [priceFilter, setPriceFilter] = useState("");
 
+  const limit = 20;
+
   const createSearch = (search) => {
     setSearchQuery(search);
   };
@@ -32,10 +34,13 @@ export const ProductProvider = ({ children }) => {
     const fetchProducts = async () => {
       try {
         setLoading(true);
+
+        console.log(priceFilter)
+
         const sortQueryParam = selectedSort ? `&sort=${selectedSort}` : "";
         const priceQueryParam = priceFilter ? `&price=${priceFilter}` : "";
         const response = await fetch(
-          `https://api.mercadolibre.com/sites/MLA/search?q=${searchQuery}&limit=20${sortQueryParam}${priceQueryParam}`
+          `https://api.mercadolibre.com/sites/MLA/search?q=${searchQuery}&limit=${limit}${sortQueryParam}${priceQueryParam}`
         );
         if (!response.ok) {
           throw new Error('Error al cargar productos');

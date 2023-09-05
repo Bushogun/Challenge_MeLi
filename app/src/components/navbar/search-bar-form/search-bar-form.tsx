@@ -16,7 +16,7 @@ export const SearchBarForm = () => {
 				try {
                     createSearch(query);
 				} catch (error) {
-					console.log('error redirect', error)
+					// console.log('error redirect', error)
 				}
 			}
 		} catch (error) {

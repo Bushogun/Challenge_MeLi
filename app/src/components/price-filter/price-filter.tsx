@@ -10,8 +10,8 @@ interface PriceFilterProps {
 }
 
 const PriceFilter: React.FC<PriceFilterProps> = ({ onFilterChange, availablePriceFilter }) => {
-  const [minPrice, setMinPrice] = useState<string>('');
-  const [maxPrice, setMaxPrice] = useState<string>('');
+  const [minPrice, setMinPrice] = useState<string>('*');
+  const [maxPrice, setMaxPrice] = useState<string>('*');
 
   const handleMinPriceChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
@@ -29,9 +29,7 @@ const PriceFilter: React.FC<PriceFilterProps> = ({ onFilterChange, availablePric
 
     if (!isNaN(minPriceNum) && !isNaN(maxPriceNum)) {
       onFilterChange(minPriceNum.toString(), maxPriceNum.toString());
-    } else {
-      console.error('Los valores ingresados no son números válidos.');
-    }
+    } 
   };
 
   if (!availablePriceFilter || !availablePriceFilter.values || !Array.isArray(availablePriceFilter.values)) {
@@ -47,8 +45,10 @@ const PriceFilter: React.FC<PriceFilterProps> = ({ onFilterChange, availablePric
           <input
             type="radio"
             name="priceRange"
-            value={`${availablePriceFilter.id}-${priceRangeValue.id}`}
-            onChange={() => onFilterChange(availablePriceFilter.id, priceRangeValue.id)}
+            value={priceRangeValue.id.replace(/^price-/, "")}
+            // onClick={() => {
+            //   onFilterChange(availablePriceFilter.id, priceRangeValue.id.replace(/^price-/, ""));
+            // }}
           />
         </label>
       ))}

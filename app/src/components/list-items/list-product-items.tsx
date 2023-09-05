@@ -14,9 +14,12 @@ export const ListItems = ({ products }: Props) => {
   const paginate = (pageNumber: number) => {
     setCurrentPage(pageNumber);
   };
+  
+  if (products.length === 0) {
+    return null;
+  }
 
   return (
-    <>
     <div className={styles.listContainer}>
       {products
         .slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage)
@@ -35,6 +38,5 @@ export const ListItems = ({ products }: Props) => {
         ))}
       </div>
     </div>
-    </>
   );
 };
