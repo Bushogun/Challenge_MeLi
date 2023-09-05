@@ -11,6 +11,10 @@
     label {
       display: block;
       margin-bottom: 8px;
+      small{
+        font-size: 10px;
+        color: $color__gray--3;
+      }
       input[type="radio"] {
         margin-right: 8px;
       }

@@ -12,8 +12,14 @@ type Props = {
 	title?: string
 }
 
+
+
 function Layout( { children, title = 'Mercado Libre' }: Props) {
-  const { products, loading, error, availableSorts } = useProductContext();
+  const { products, loading, error, createSearch, availableSorts, applySort, applyPriceFilter, availablePriceFilter  } = useProductContext();
+  interface PriceFilterProps {
+    onFilterChange: (minPrice: string, maxPrice: string) => void;
+  }
+
   return (
     <>
     <Head>
@@ -30,7 +36,7 @@ function Layout( { children, title = 'Mercado Libre' }: Props) {
     <main>
       <div className={styles.container}>
         <div className={styles.container_filters}>
-        <PriceFilter />
+        <PriceFilter onFilterChange={applyPriceFilter} availablePriceFilter ={availablePriceFilter} />
           <SortFilter availableSorts={availableSorts} defaultValue="default"/>
           </div>
           {loading ? (

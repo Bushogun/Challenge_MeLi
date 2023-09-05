@@ -1,64 +1,74 @@
 import React, { useState } from 'react';
 import styles from './price-filter.module.scss';
+import { useProductContext } from "@/src/context/ProductContext";
+import { IfilterRangeValues } from '@/src/interface/i-price-filter'
 
 interface PriceFilterProps {
   onFilterChange: (minPrice: string, maxPrice: string) => void;
+  availablePriceFilter: IfilterRangeValues;
+  defaultValue: string;
 }
 
-const PriceFilter: React.FC<PriceFilterProps> = ({ onFilterChange }) => {
-  const [minPrice, setMinPrice] = useState('');
-  const [maxPrice, setMaxPrice] = useState('');
+const PriceFilter: React.FC<PriceFilterProps> = ({ onFilterChange, availablePriceFilter }) => {
+  const [minPrice, setMinPrice] = useState<string>('');
+  const [maxPrice, setMaxPrice] = useState<string>('');
 
   const handleMinPriceChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setMinPrice(e.target.value);
+    const value = e.target.value;
+    setMinPrice(value);
   };
 
   const handleMaxPriceChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setMaxPrice(e.target.value);
+    const value = e.target.value;
+    setMaxPrice(value);
   };
 
   const applyFilter = () => {
-    onFilterChange(minPrice, maxPrice);
+    const minPriceNum = parseFloat(minPrice);
+    const maxPriceNum = parseFloat(maxPrice);
+
+    if (!isNaN(minPriceNum) && !isNaN(maxPriceNum)) {
+      onFilterChange(minPriceNum.toString(), maxPriceNum.toString());
+    } else {
+      console.error('Los valores ingresados no son números válidos.');
+    }
   };
+
+  if (!availablePriceFilter || !availablePriceFilter.values || !Array.isArray(availablePriceFilter.values)) {
+    return null;
+  }
 
   return (
     <div className={styles.price_filter}>
       <div className={styles.name_filter}>Precio</div>
-      <label className={styles.price_filter_label}>
-        $40.000 a $50.000
-        <input
-          type="radio"
-          name="priceRange"
-          // value="40000-50000"
-          // onChange={() => onFilterChange('40000', '50000')}
-        />
-      </label>
-      <label className={styles.price_filter_label}>
-        $50.000 a $55.000
-        <input
-          type="radio"
-          name="priceRange"
-          // value="50000-55000"
-          // onChange={() => onFilterChange('50000', '55000')}
-        />
-      </label>
+      {availablePriceFilter.values.map((priceRangeValue) => (
+        <label key={priceRangeValue.id} className={styles.price_filter_label}>
+          {`${priceRangeValue.name}`}<small>&nbsp;(${priceRangeValue.results})</small>
+          <input
+            type="radio"
+            name="priceRange"
+            value={`${availablePriceFilter.id}-${priceRangeValue.id}`}
+            onChange={() => onFilterChange(availablePriceFilter.id, priceRangeValue.id)}
+          />
+        </label>
+      ))}
       <div className={styles.inputs_container}>
         $
         <input
           className={styles.price_filter_input}
           placeholder="Mínimo"
           type="number"
-          // value={minPrice}
-          // onChange={handleMinPriceChange}
+          value={minPrice}
+          onChange={handleMinPriceChange}
         />
         <p>a&nbsp;</p>
-
-        $<input
+        $
+        <input
           className={styles.price_filter_input}
           placeholder="Máximo"
           type="number"
-          // value={maxPrice}
-          // onChange={handleMaxPriceChange}
+          value={maxPrice}
+          onChange={handleMaxPriceChange}
         />
       </div>
       <div className={styles.container_button}>

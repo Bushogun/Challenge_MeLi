@@ -3,12 +3,13 @@ import { ISort } from '@/src/interface/i-available-sorts';
 import styles from './sort-filter.module.scss';
 import { useProductContext } from "@/src/context/ProductContext";
 
-interface Props {
+interface SortFilterProps {
+  availableSorts: ISort[]; // Agrega esta propiedad a la interfaz de props
   defaultValue: string;
 }
 
-export const SortFilter = ({ defaultValue }: Props) => {
-  const { availableSorts, applySort } = useProductContext(); // Obtén los datos de ordenamiento del contexto
+export const SortFilter = ({ defaultValue }: SortFilterProps) => {
+  const { availableSorts, applySort } = useProductContext();
 
   if (availableSorts.length === 0) {
     return null;
