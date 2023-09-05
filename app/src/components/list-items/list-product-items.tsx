@@ -5,6 +5,7 @@ import styles from './list-product-items.module.scss';
 
 interface Props {
   products: IProduct[];
+  product: IProduct;
 }
 
 export const ListItems = ({ products }: Props) => {

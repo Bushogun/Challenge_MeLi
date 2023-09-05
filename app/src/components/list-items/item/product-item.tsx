@@ -1,10 +1,10 @@
 import React from 'react';
 import { TbTruckDelivery } from 'react-icons/tb'
-import { Result } from '@/src/interface/i-product';
+import { IProduct } from '@/src/interface/i-products';
 import styles from './product-item.module.scss'
 
 interface Props {
-  product: Result;
+  product: IProduct;
 }
 
 function capitalizeLocations(text: string): string {
