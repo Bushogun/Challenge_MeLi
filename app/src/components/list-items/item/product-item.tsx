@@ -1,6 +1,11 @@
 import React from 'react';
 import { TbTruckDelivery } from 'react-icons/tb'
+import { Result } from '@/src/interface/i-product';
 import styles from './product-item.module.scss'
+
+interface Props {
+  product: Result;
+}
 
 function capitalizeLocations(text: string): string {
   return text.replace(/\b[A-Z]+\b/g, (word) => {

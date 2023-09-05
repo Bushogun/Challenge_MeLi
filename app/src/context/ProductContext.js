@@ -47,11 +47,8 @@ export const ProductProvider = ({ children }) => {
         }
         const data = await response.json();
         setProducts(data.results);
-        // console.log("setProducts " + JSON.stringify(data.results))
         setAvailableSorts(data.available_sorts);
-        // console.log("setAvailableSorts " + JSON.stringify(data.available_sorts))
         setAvailablePriceFilter(data.available_filters[2])
-        console.log("setAvailablePriceFilter " + JSON.stringify(data.available_filters[2]))
         setLoading(false);
       } catch (error) {
         setError(error);
@@ -61,7 +58,16 @@ export const ProductProvider = ({ children }) => {
     fetchProducts();
   }, [searchQuery, selectedSort, priceFilter]); 
   return (
-    <ProductContext.Provider value={{ products, loading, error, createSearch, availableSorts, applySort, applyPriceFilter, availablePriceFilter  }}>
+    <ProductContext.Provider value={{ 
+      products,
+      loading, 
+      error, 
+      createSearch, 
+      availableSorts, 
+      applySort, 
+      applyPriceFilter,
+      availablePriceFilter
+    }}>
       {children}
     </ProductContext.Provider>
   );

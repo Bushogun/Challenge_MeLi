@@ -1,5 +1,5 @@
 
-export interface IProduct {
+export interface Result {
     id:                    string;
     title:                 string;
     condition:             Condition;

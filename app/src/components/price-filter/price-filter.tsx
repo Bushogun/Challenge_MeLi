@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import styles from './price-filter.module.scss';
-import { useProductContext } from "@/src/context/ProductContext";
 import { IfilterRangeValues } from '@/src/interface/i-price-filter'
 
 interface PriceFilterProps {
   onFilterChange: (minPrice: string, maxPrice: string) => void;
   availablePriceFilter: IfilterRangeValues;
-  defaultValue: string;
+  defaultValue?: string;
 }
 
 const PriceFilter: React.FC<PriceFilterProps> = ({ onFilterChange, availablePriceFilter }) => {
