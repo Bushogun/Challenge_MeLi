@@ -1,15 +1,27 @@
 import React, { useState } from "react";
 import { FiSearch } from 'react-icons/fi'
+import { useRouter } from 'next/router'
 import { useProductContext } from "@/src/context/ProductContext";
 import styles from './search-bar-form.module.scss'
 
 export const SearchBarForm = () => {
+    const router = useRouter()
     const [query, setQuery] = useState("");
     const { createSearch } = useProductContext();
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        createSearch(query);
+        try {
+			if (query != '') {
+				try {
+                    createSearch(query);
+				} catch (error) {
+					console.log('error redirect', error)
+				}
+			}
+		} catch (error) {
+			
+		}
     }
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {

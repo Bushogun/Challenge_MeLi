@@ -29,15 +29,18 @@ function Layout( { children, title = 'Mercado Libre' }: Props) {
     </header>
     <main>
       <div className={styles.container}>
-      {/* <PriceFilter /> */}
-        <SortFilter availableSorts={availableSorts} defaultValue="default"/>
-        {loading ? (
-          <p>Loading...</p>
-        ) : error ? (
-          <p>Error: {error.message}</p>
-        ) : (
-          <ListItems products={products} />
-        )}
+        <div className={styles.container_filters}>
+        <PriceFilter />
+          <SortFilter availableSorts={availableSorts} defaultValue="default"/>
+          </div>
+          {loading ? (
+            <p>Loading...</p>
+          ) : error ? (
+            <p>Error: {error.message}</p>
+          ) : (
+            <ListItems products={products} />
+          )}
+        
       </div>
     </main>
     </>

@@ -5,3 +5,15 @@
 	align-items: center;
 	justify-content: center;
 }
+
+.container_filters{
+	display: flex;
+	justify-content: space-between;
+}
+
+@media screen and (max-width: 768px) {
+	.container_filters{
+		display: block;
+		text-align: center;
+	}
+}

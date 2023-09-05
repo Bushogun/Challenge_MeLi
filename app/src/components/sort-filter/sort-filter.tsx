@@ -22,7 +22,7 @@ export const SortFilter = ({ defaultValue }: Props) => {
         defaultValue={defaultValue}
         onChange={(e) => applySort(e.target.value)}
       >
-        <option value={defaultValue}>Selecciona una opción</option>
+        <option value={defaultValue}>Selecciona</option>
         {availableSorts.map((availableSort:any) => (
           <option key={availableSort.id} value={availableSort.id}>
             {availableSort.name}
