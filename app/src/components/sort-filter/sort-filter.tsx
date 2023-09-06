@@ -8,7 +8,11 @@ interface SortFilterProps {
 }
 
 export const SortFilter = ({ availableSorts }: SortFilterProps) => {
-  const { applySort } = useProductContext();
+  const { applySort, products } = useProductContext();
+  
+  if (products==0) {
+    return null;
+  }
 
   return (
     <div className={styles.sort}>

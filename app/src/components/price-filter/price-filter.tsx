@@ -56,7 +56,13 @@ const PriceFilter: React.FC<PriceFilterProps> = ({ onFilterChange, availablePric
           placeholder="Mínimo"
           type="number"
           value={minPrice}
-          onChange={handleMinPriceChange}
+          onChange={(e) => {
+            const inputText = e.target.value;
+            const sanitizedValue = inputText.replace(/[^0-9]/g, '');
+            handleMinPriceChange({ target: { value: sanitizedValue } } as React.ChangeEvent<HTMLInputElement>);
+          }}
+
+          onWheel={(e) => e.preventDefault()} 
         />
         <p>a&nbsp;</p>
         $
@@ -66,6 +72,8 @@ const PriceFilter: React.FC<PriceFilterProps> = ({ onFilterChange, availablePric
           type="number"
           value={maxPrice}
           onChange={handleMaxPriceChange}
+          min="0" 
+          onWheel={(e) => e.preventDefault()}
         />
       </div>
       <div className={styles.container_button}>
