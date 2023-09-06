@@ -21,7 +21,7 @@ export const SortFilter = ({ availableSorts }: SortFilterProps) => {
         className={styles.customSelect}
         onChange={(e) => applySort(e.target.value)}
       >
-        <option value="" disabled selected hidden>Selecciona</option>
+        <option value="" disabled >Selecciona</option>
         {availableSorts.map((availableSort) => (
           <option key={availableSort.id} value={availableSort.id}>
             {availableSort.name}

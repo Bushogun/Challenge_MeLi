@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { fetchProductData } from '@/src/utils/apiUtils';
 
 const useProductData = ({ searchQuery, limit, selectedSort, priceFilter, setAvailableSorts, setAvailablePriceFilter }) => {
   const [products, setProducts] = useState([]);
@@ -6,29 +7,16 @@ const useProductData = ({ searchQuery, limit, selectedSort, priceFilter, setAvai
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    const fetchProducts = async () => {
+    const fetchData = async () => {
       try {
         setLoading(true);
-        const sortQueryParam = selectedSort ? `&sort=${selectedSort}` : '';
-        const priceQueryParam = priceFilter ? `&price=${priceFilter}` : '';
 
-        const response = await fetch(
-          `https://api.mercadolibre.com/sites/MLA/search?q=${searchQuery}&limit=${limit}${sortQueryParam}${priceQueryParam}`
-        );
-        console.log(`https://api.mercadolibre.com/sites/MLA/search?q=${searchQuery}&limit=${limit}${sortQueryParam}${priceQueryParam}`)
-        if (!response.ok) {
-          throw new Error('Error al cargar productos');
-        }
-        const data = await response.json();
+        const data = await fetchProductData(searchQuery, limit, selectedSort, priceFilter);
+
         setProducts(data.results);
         setAvailableSorts(data.available_sorts);
-        console.log("setAvailableSorts",data.available_sorts)
-        // const priceFilterObject = data.available_filters.find(filter => filter.id === 'price');
-        // if (priceFilterObject) {
-        //   const priceValues = priceFilterObject.values;
-        // }
         setAvailablePriceFilter(data.available_filters.find(filter => filter.id === 'price'));
-        console.log("setAvailablePriceFilter",data.available_filters.find(filter => filter.id === 'price'))
+
         setLoading(false);
       } catch (error) {
         setError(error);
@@ -36,10 +24,56 @@ const useProductData = ({ searchQuery, limit, selectedSort, priceFilter, setAvai
       }
     };
 
-    fetchProducts();
+    fetchData();
   }, [searchQuery, limit, selectedSort, priceFilter]);
 
   return { products, loading, error };
 };
 
 export default useProductData;
+
+
+/*
+
+import { useState, useEffect } from 'react';
+import {
+  fetchProducts,
+  fetchAvailableSorts,
+  fetchAvailablePriceFilter,
+} from './apiUtils';
+
+const useProductData = ({ searchQuery, limit, selectedSort, priceFilter }) => {
+  const [products, setProducts] = useState([]);
+  const [availableSorts, setAvailableSorts] = useState([]);
+  const [availablePriceFilter, setAvailablePriceFilter] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        setLoading(true);
+
+        const productsData = await fetchProducts(searchQuery, limit, selectedSort, priceFilter);
+        const sortsData = await fetchAvailableSorts(searchQuery, limit, selectedSort);
+        const priceFilterData = await fetchAvailablePriceFilter(searchQuery, limit);
+
+        setProducts(productsData);
+        setAvailableSorts(sortsData);
+        setAvailablePriceFilter(priceFilterData);
+
+        setLoading(false);
+      } catch (error) {
+        setError(error);
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, [searchQuery, limit, selectedSort, priceFilter]);
+
+  return { products, availableSorts, availablePriceFilter, loading, error };
+};
+
+export default useProductData;
+*/

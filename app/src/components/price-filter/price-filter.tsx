@@ -13,6 +13,7 @@ const PriceFilter: React.FC<PriceFilterProps> = ({ onFilterChange, availablePric
   const [minPrice, setMinPrice] = useState<string>('');
   const [maxPrice, setMaxPrice] = useState<string>('');
 
+
   const handleMinPriceChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     setMinPrice(value);
@@ -24,9 +25,9 @@ const PriceFilter: React.FC<PriceFilterProps> = ({ onFilterChange, availablePric
   };
 
   const applyFilter = () => {
-
-      applyPriceFilter(minPrice, maxPrice);
-
+    console.log(minPrice, maxPrice)
+    console.log(availablePriceFilter)
+    applyPriceFilter(minPrice, maxPrice);
   };
 
   if (!availablePriceFilter || !availablePriceFilter.values || !Array.isArray(availablePriceFilter.values)) {
@@ -36,7 +37,7 @@ const PriceFilter: React.FC<PriceFilterProps> = ({ onFilterChange, availablePric
   return (
     <div className={styles.price_filter}>
       <div className={styles.name_filter}>Precio</div>
-      {availablePriceFilter.values.map((priceRangeValue) => (
+      {availablePriceFilter.values.map((priceRangeValue, i) => (
         <label key={priceRangeValue.id} className={styles.price_filter_label}>
           {`${priceRangeValue.name}`}
           <input
@@ -44,7 +45,10 @@ const PriceFilter: React.FC<PriceFilterProps> = ({ onFilterChange, availablePric
             name="priceRange"
             value={priceRangeValue.id}
             onClick={() => {
-              // applyFilter(setMinPrice(value));
+              console.log(priceRangeValue)
+              const x = priceRangeValue.id.split('-')
+              applyPriceFilter((x[0]), (x[1]))
+
             }}
           /><small>&nbsp;({priceRangeValue.results})</small>
         </label>
@@ -62,7 +66,7 @@ const PriceFilter: React.FC<PriceFilterProps> = ({ onFilterChange, availablePric
             handleMinPriceChange({ target: { value: sanitizedValue } } as React.ChangeEvent<HTMLInputElement>);
           }}
 
-          onWheel={(e) => e.preventDefault()} 
+          onWheel={(e) => e.preventDefault()}
         />
         <p>a&nbsp;</p>
         $
@@ -72,15 +76,20 @@ const PriceFilter: React.FC<PriceFilterProps> = ({ onFilterChange, availablePric
           type="number"
           value={maxPrice}
           onChange={handleMaxPriceChange}
-          min="0" 
+          min="0"
           onWheel={(e) => e.preventDefault()}
         />
+
+
+        <div className={styles.container_button}>
+          <button className={styles.price_filter_button} onClick={applyFilter}>
+          >
+          </button>
+        </div>
+
+
       </div>
-      <div className={styles.container_button}>
-        <button className={styles.price_filter_button} onClick={applyFilter}>
-          Aplicar Filtro
-        </button>
-      </div>
+
     </div>
   );
 };

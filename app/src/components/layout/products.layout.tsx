@@ -17,7 +17,7 @@ function ProductsLayout() {
       ) : error ? (
         <p>Error: {error.message}</p>
       ) : (
-        <ListItems products={products} product={product} />
+        <ListItems products={products} />
       )}
     </>
   )

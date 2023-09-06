@@ -31,9 +31,7 @@ export const ProductProvider = ({ children }) => {
   };
 
   const applyPriceFilter = (minPrice, maxPrice) => {
-    const formattedMinPrice = parseFloat(minPrice).toFixed(2);
-    const formattedMaxPrice = parseFloat(maxPrice).toFixed(2);
-    const priceFilterValue = `${formattedMinPrice}-${formattedMaxPrice}`;
+    const priceFilterValue = `${minPrice}-${maxPrice}`;
     setPriceFilter(priceFilterValue);
   };
   

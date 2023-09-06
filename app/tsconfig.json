@@ -19,6 +19,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/contexts/ProductContext.js", "src/hooks/usePagination.js", "src/pages/redux/store.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/contexts/ProductContext.js", "src/hooks/usePagination.js", "src/pages/redux/store.ts"],
   "exclude": ["node_modules"]
 }
