@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
 import styles from './price-filter.module.scss';
-import { IfilterRangeValues } from '@/src/interface/i-price-filter'
+import { IfilterRangeValues } from '@/src/interfaces/i-filter-range-values'
+import { useProductContext } from "@/src/contexts/ProductContext";
 
 interface PriceFilterProps {
   onFilterChange: (minPrice: string, maxPrice: string) => void;
   availablePriceFilter: IfilterRangeValues;
-  defaultValue?: string;
 }
 
 const PriceFilter: React.FC<PriceFilterProps> = ({ onFilterChange, availablePriceFilter }) => {
-  const [minPrice, setMinPrice] = useState<string>('*');
-  const [maxPrice, setMaxPrice] = useState<string>('*');
+  const { applyPriceFilter } = useProductContext();
+  const [minPrice, setMinPrice] = useState<string>('');
+  const [maxPrice, setMaxPrice] = useState<string>('');
 
   const handleMinPriceChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
@@ -23,12 +24,9 @@ const PriceFilter: React.FC<PriceFilterProps> = ({ onFilterChange, availablePric
   };
 
   const applyFilter = () => {
-    const minPriceNum = parseFloat(minPrice);
-    const maxPriceNum = parseFloat(maxPrice);
 
-    if (!isNaN(minPriceNum) && !isNaN(maxPriceNum)) {
-      onFilterChange(minPriceNum.toString(), maxPriceNum.toString());
-    } 
+      applyPriceFilter(minPrice, maxPrice);
+
   };
 
   if (!availablePriceFilter || !availablePriceFilter.values || !Array.isArray(availablePriceFilter.values)) {
@@ -40,15 +38,15 @@ const PriceFilter: React.FC<PriceFilterProps> = ({ onFilterChange, availablePric
       <div className={styles.name_filter}>Precio</div>
       {availablePriceFilter.values.map((priceRangeValue) => (
         <label key={priceRangeValue.id} className={styles.price_filter_label}>
-          {`${priceRangeValue.name}`}<small>&nbsp;(${priceRangeValue.results})</small>
+          {`${priceRangeValue.name}`}
           <input
             type="radio"
             name="priceRange"
-            value={priceRangeValue.id.replace(/^price-/, "")}
-            // onClick={() => {
-            //   onFilterChange(availablePriceFilter.id, priceRangeValue.id.replace(/^price-/, ""));
-            // }}
-          />
+            value={priceRangeValue.id}
+            onClick={() => {
+              // applyFilter(setMinPrice(value));
+            }}
+          /><small>&nbsp;({priceRangeValue.results})</small>
         </label>
       ))}
       <div className={styles.inputs_container}>

@@ -1,24 +1,12 @@
 import React from 'react';
 import { TbTruckDelivery } from 'react-icons/tb'
-import { IProduct } from '@/src/interface/i-products';
+import { IProduct } from '@/src/interfaces/i-products';
 import styles from './product-item.module.scss'
+import { capitalizeLocations, capitalizeTitle } from '@/src/utils/stringUtils'
+
 
 interface Props {
   product: IProduct;
-}
-
-function capitalizeLocations(text: string): string {
-  return text.replace(/\b[A-Z]+\b/g, (word) => {
-    return word.charAt(0) + word.slice(1).toLowerCase();
-  });
-}
-
-function capitalizeTitle(text: string): string {
-  return text
-    .toLowerCase()
-    .split(' ')
-    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-    .join(' ');
 }
 
 export const ProductItem = ({ product }: Props) => {

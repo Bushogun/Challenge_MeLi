@@ -12,3 +12,9 @@ describe("Home", () => {
     expect(logo).toBeInTheDocument();
   });
 });
+
+
+// ListItems component
+// it ("should render its content correctly")
+
+// ListItems component should render its content correctly

@@ -1,9 +1,15 @@
 import React from 'react'
-import { useProductContext } from "@/src/context/ProductContext";
+import { useProductContext } from "@/src/contexts/ProductContext";
 import { ListItems } from '../list-items/list-product-items'
+import { IProduct } from '@/src/interfaces/i-products';
+
+interface Props {
+  products: IProduct[];
+  product: IProduct;
+}
 
 function ProductsLayout() {
-    const { products, loading, error } = useProductContext();
+    const { products, product, loading, error } = useProductContext();
   return (
     <>
     {loading ? (
@@ -11,7 +17,7 @@ function ProductsLayout() {
       ) : error ? (
         <p>Error: {error.message}</p>
       ) : (
-        <ListItems products={products} />
+        <ListItems products={products} product={product} />
       )}
     </>
   )

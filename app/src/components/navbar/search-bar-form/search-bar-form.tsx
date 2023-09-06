@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { FiSearch } from 'react-icons/fi'
-import { useProductContext } from "@/src/context/ProductContext";
+import { useProductContext } from "@/src/contexts/ProductContext";
 import styles from './search-bar-form.module.scss'
 
 export const SearchBarForm = () => {
@@ -10,14 +10,10 @@ export const SearchBarForm = () => {
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         try {
-			if (query != '') {
-				try {
-                    createSearch(query);
-				} catch (error) {
-				}
-			}
-		} catch (error) {
-			
+			if (!query) return 
+			    createSearch(query);
+            } catch (error) {
+                console.log(error)
 		}
     }
 
