@@ -34,7 +34,6 @@ export default useProductData;
 
 
 /*
-
 import { useState, useEffect } from 'react';
 import {
   fetchProducts,
