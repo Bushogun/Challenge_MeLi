@@ -11,13 +11,17 @@ interface Props {
 }
 
 export const ListItems = () => {
-  const itemsPerPage = 4;
+  const itemsPerPage = useSelector((state: RootState) => state.product.itemsPerPage);
   const products = useSelector((state: RootState) => state.product.products);
 
   const { currentPage, paginate, currentItems, totalPages } = usePagination(
     itemsPerPage,
     products
   );
+
+  if (products.length === 0) {
+    return null; 
+  }
 
   return (
     <div className={styles.listContainer}>

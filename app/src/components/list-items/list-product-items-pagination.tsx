@@ -15,9 +15,8 @@ const Pagination: React.FC<PaginationProps> = ({
     <div className={styles.pagination}>
       {Array.from({ length: totalPages }).map((_, index) => (
         <button
-          className={`${styles.button_pagination} ${
-            index + 1 === currentPage ? styles.selected : ''
-          }`}
+          className={`${styles.button_pagination} ${index + 1 === currentPage ? styles.selected : ''
+            }`}
           key={index}
           onClick={() => onPageChange(index + 1)}
         >

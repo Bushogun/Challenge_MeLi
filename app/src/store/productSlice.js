@@ -5,6 +5,9 @@ const productSlice = createSlice({
   initialState: {
     searchQuery: '',
     limit: '20',
+    itemsPerPage: '4',
+    minPrice: '',
+    maxPrice: '',
     selectedSort: '',
     priceFilter: '',
     products: [],
@@ -26,6 +29,12 @@ const productSlice = createSlice({
     setError: (state, action) => {
       state.error = action.payload;
     },
+    setMinPrice: (state, action) => {
+      state.minPrice = action.payload;
+    },
+    setMaxPrice: (state, action) => {
+      state.maxPrice = action.payload;
+    },
     setSelectedSort: (state, action) => {
       state.selectedSort = action.payload;
     },
@@ -43,6 +52,9 @@ const productSlice = createSlice({
 
 export const {
   limit,
+  setMaxPrice,
+  setMinPrice,
+  itemsPerPage,
   setSearchQuery,
   setProducts,
   setLoading,

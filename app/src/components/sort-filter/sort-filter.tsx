@@ -16,10 +16,7 @@ export const SortFilter = () => {
   const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
   dispatch(setSelectedSort(e.target.value));
 }
-  // if (products==0) {
-  //   return null;
-  // }
-  //availableSorts(e.target.value)
+
   return (
     <div className={styles.sort}>
       <p>Ordenar por</p>
