@@ -3,7 +3,7 @@ import Head from 'next/head'
 import { Navbar } from "../navbar/Navbar"
 import  ProductsLayout  from './products.layout'
 import { SortFilter } from '../sort-filter/sort-filter'
-import { useProductContext } from "@/src/contexts/ProductContext";
+// import { useProductContext } from "@/src/contexts/ProductContext";
 import PriceFilter from '../price-filter/price-filter'
 import styles from './layout.module.scss'
 
@@ -13,7 +13,7 @@ type Props = {
 }
 
 function Layout( { title = 'Mercado Libre' }: Props) {
-  const { availableSorts, applyPriceFilter, availablePriceFilter  } = useProductContext();
+  // const { availableSorts, applyPriceFilter, availablePriceFilter  } = useProductContext();
   interface PriceFilterProps {
     onFilterChange: (minPrice: string, maxPrice: string) => void;
   }
@@ -33,11 +33,11 @@ function Layout( { title = 'Mercado Libre' }: Props) {
     </header>
     <main>
       <div className={styles.container}>
-        <div className={styles.container_filters}>
-          <PriceFilter onFilterChange={applyPriceFilter} availablePriceFilter ={availablePriceFilter} />
-          <SortFilter availableSorts={availableSorts} />
-        </div>
-          <ProductsLayout />
+        {/* <div className={styles.container_filters}>
+          <PriceFilter onFilterChange={applyPriceFilter} availablePriceFilter ={availablePriceFilter} />*/}
+          <SortFilter />
+        {/* </div>  */}
+           <ProductsLayout /> 
       </div>
     </main>
     </>

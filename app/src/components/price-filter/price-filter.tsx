@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styles from './price-filter.module.scss';
 import { IfilterRangeValues } from '@/src/interfaces/i-filter-range-values'
-import { useProductContext } from "@/src/contexts/ProductContext";
+// import { useProductContext } from "@/src/contexts/ProductContext";
 
 interface PriceFilterProps {
   onFilterChange: (minPrice: string, maxPrice: string) => void;
@@ -9,7 +9,7 @@ interface PriceFilterProps {
 }
 
 const PriceFilter: React.FC<PriceFilterProps> = ({ onFilterChange, availablePriceFilter }) => {
-  const { applyPriceFilter } = useProductContext();
+  // const { applyPriceFilter } = useProductContext();
   const [minPrice, setMinPrice] = useState<string>('');
   const [maxPrice, setMaxPrice] = useState<string>('');
 

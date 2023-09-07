@@ -1,24 +1,29 @@
-import React, { useState } from "react";
-import { FiSearch } from 'react-icons/fi'
-import { useProductContext } from "@/src/contexts/ProductContext";
-import styles from './search-bar-form.module.scss'
+import React from "react";
+import { FiSearch } from 'react-icons/fi';
+import { useSelector, useDispatch } from "react-redux";
+import { setSearchQuery } from '@/src/store/productSlice';
+import useProductData from '@/src/hooks/useProductData'
+import styles from './search-bar-form.module.scss';
 
 export const SearchBarForm = () => {
-    const [query, setQuery] = useState("");
-    const { createSearch } = useProductContext();
+    const dispatch = useDispatch();
+    const query = useSelector((state: RootState) => state.product.searchQuery);    
+    
+    useProductData();
 
-    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         try {
-			if (!query) return 
-			    createSearch(query);
-            } catch (error) {
-                console.log(error)
-		}
+            if (!query) return;
+            dispatch(setSearchQuery(query));
+            
+        } catch (error) {
+            console.log(error);
+        }
     }
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setQuery(e.target.value);
+        dispatch(setSearchQuery(e.target.value));
     }
 
     return (

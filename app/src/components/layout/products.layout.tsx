@@ -1,26 +1,22 @@
-import React from 'react'
-import { useProductContext } from "@/src/contexts/ProductContext";
-import { ListItems } from '../list-items/list-product-items'
-import { IProduct } from '@/src/interfaces/i-products';
-
-interface Props {
-  products: IProduct[];
-  product: IProduct;
-}
+import React from 'react';
+import { useSelector } from 'react-redux';
+import { ListItems } from '../list-items/list-product-items';
 
 function ProductsLayout() {
-    const { products, product, loading, error } = useProductContext();
+  const loading = useSelector((state: RootState) => state.product.loading);
+  const error = useSelector((state: RootState) => state.product.error);
+
   return (
     <>
-    {loading ? (
+      {loading ? (
         <p>Loading...</p>
       ) : error ? (
         <p>Error: {error.message}</p>
       ) : (
-        <ListItems products={products} />
+        <ListItems />
       )}
     </>
-  )
+  );
 }
 
-export default ProductsLayout
+export default ProductsLayout;

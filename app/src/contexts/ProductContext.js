@@ -1,8 +1,8 @@
 import React, { createContext, useContext, useState } from 'react';
 import useProductData from '@/src/hooks/useProductData';
 
-export const ProductContext = createContext();
-export const useProductContext = () => useContext(ProductContext);
+// export const ProductContext = createContext();
+// export const useProductContext = () => useContext(ProductContext);
 
 export const ProductProvider = ({ children }) => {
   const [searchQuery, setSearchQuery] = useState("");

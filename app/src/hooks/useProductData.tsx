@@ -1,36 +1,38 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { setProducts, setLoading, setError, setAvailablePriceFilter, setAvailableSorts } from '@/src/store/productSlice';
 import { fetchProductData } from '@/src/utils/apiUtils';
 
-const useProductData = ({ searchQuery, limit, selectedSort, priceFilter, setAvailableSorts, setAvailablePriceFilter }) => {
-  const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
-
+const useProductData = () => {
+  const dispatch = useDispatch();
+  const searchQuery = useSelector((state: RootState) => state.product.searchQuery);
+  const limit = useSelector((state: RootState) => state.product.limit);
+  const selectedSort = useSelector((state: RootState) => state.product.selectedSort);
+  const priceFilter = useSelector((state: RootState) => state.product.priceFilter);
+  
   useEffect(() => {
     const fetchData = async () => {
       try {
-        setLoading(true);
-
-        const data = await fetchProductData(searchQuery, limit, selectedSort, priceFilter);
-
-        setProducts(data.results);
-        setAvailableSorts(data.available_sorts);
-        setAvailablePriceFilter(data.available_filters.find(filter => filter.id === 'price'));
-
-        setLoading(false);
+        dispatch(setLoading(true));
+        const data = await fetchProductData(dispatch, searchQuery, limit, selectedSort, priceFilter);
+        console.log(data)
+        dispatch(setProducts(data.results))
+        dispatch(setAvailableSorts(data.available_sorts))
+        // dispatch(setAvailableSorts(data.available_filters))
+        // dispatch(setAvailablePriceFilter)
+        dispatch(setLoading(false));
       } catch (error) {
-        setError(error);
-        setLoading(false);
+        // dispatch(setError('Hubo un error en el fetch'));
+        dispatch(setLoading(false));
       }
     };
 
     fetchData();
   }, [searchQuery, limit, selectedSort, priceFilter]);
-
-  return { products, loading, error };
 };
 
 export default useProductData;
+
 
 
 /*
