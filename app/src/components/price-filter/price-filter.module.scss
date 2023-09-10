@@ -62,6 +62,7 @@
 
   @media screen and (max-width: 422px) {
     .price_filter {
+      padding: 16px 0px 0px 0px;
         label {
             display: none;
         }
@@ -69,6 +70,9 @@
             display: block;
             justify-content: center;
             align-items: center;
+        }
+        .container_button{
+          padding-top: 10px;
         }
     }
 

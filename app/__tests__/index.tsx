@@ -1,20 +1,35 @@
+import React from 'react';
 import { render, screen } from "@testing-library/react";
-import Home from "@/src/pages/index";
+import { Navbar } from "@/src/components/navbar/Navbar";
 
-describe("Home", () => {
-  it("renders the default Next.js page", () => {
-    render(<Home />);
+   
 
-    const logo = screen.getByRole("img", {
-      name: /Vercel Logo/i,
-    });
-
-    expect(logo).toBeInTheDocument();
+describe("Navbar component", () => {
+  it("Should render its content correctly", () => {
   });
 });
 
 
-// ListItems component
-// it ("should render its content correctly")
 
-// ListItems component should render its content correctly
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const searchButtonElement = screen.getByRole('button', { name: /buscar/i });
+// expect(searchButtonElement).toBeInTheDocument();
+
+
+
+
+// render(<Navbar />);
+// const logoElement = screen.getByAltText('Logo Mercado Libre');
+// expect(screen.queryByText(/product page/i)).toBeInTheDocument();

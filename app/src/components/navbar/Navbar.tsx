@@ -17,7 +17,7 @@ export const Navbar = () => {
       <Link href="/">
         <Image
           src="/logo_ml.png"
-          alt="Logo Mercado libre"
+          alt="Logo Mercado Libre"
           title="Logo Mercado Libre"
           width="60"
           height="45"

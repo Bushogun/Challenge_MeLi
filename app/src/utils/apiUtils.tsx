@@ -1,5 +1,4 @@
-import { useDispatch } from 'react-redux';
-import { setProducts, setLoading, setError } from '@/src/store/productSlice';
+import { setLoading } from '@/src/store/productSlice';
 
 export async function fetchProductData(
   dispatch: any,
