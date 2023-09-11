@@ -41,6 +41,7 @@
     }
 
     .product_description{
+        width: 50%;
         display: block; 
         .title_price{
             padding-top: 3rem;
@@ -98,6 +99,7 @@
 	    }
 
         .product_description{
+            width: 100%;
             padding: 0em 5em;
             .title_price{
                 text-align: center;

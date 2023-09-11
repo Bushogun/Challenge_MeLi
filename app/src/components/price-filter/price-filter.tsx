@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styles from './price-filter.module.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { setMaxPrice, setMinPrice, setPriceFilter } from '@/src/store/productSlice';
-
+import { RootState } from "@/src/store/store";
 
 const PriceFilter = () => {
   const dispatch = useDispatch();

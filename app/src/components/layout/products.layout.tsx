@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { ListItems } from '../list-items/list-product-items';
+import { RootState } from "@/src/store/store";
 
 function ProductsLayout() {
   const loading = useSelector((state: RootState) => state.product.loading);
@@ -11,7 +12,7 @@ function ProductsLayout() {
       {loading ? (
         <p>Loading...</p>
       ) : error ? (
-        <p>Error: {error.message}</p>
+        <p>Error: {error}</p>
       ) : (
         <ListItems />
       )}

@@ -1,5 +1,4 @@
 import { Navbar } from "@/src/components/navbar/Navbar";
-
 import { useRouter } from "next/router";
 import { renderWithProviders } from "@/src/utils/test-utils";
 
