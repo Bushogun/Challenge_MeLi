@@ -3,13 +3,21 @@ import styles from './price-filter.module.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { setMaxPrice, setMinPrice, setPriceFilter } from '@/src/store/productSlice';
 import { RootState } from "@/src/store/store";
+import { IfilterRangeValues, Value } from '@/src/interfaces/i-filter-range-values'; // Importa las interfaces directamente
 
+interface Props {
+  PriceFilter: IfilterRangeValues;
+}
+
+interface PriceFilter extends IfilterRangeValues {
+  values: Value[];
+}
 const PriceFilter = () => {
   const dispatch = useDispatch();
 
   const availablePriceFilter = useSelector((state: RootState) => {
     const priceFilter = state.product.availablePriceFilter?.find((filter: { id: string; }) => filter.id === "price");
-    return priceFilter ? priceFilter.values : [];
+    return priceFilter ? priceFilter as PriceFilter : null;
   });
 
   const minPrice = useSelector((state: RootState) => state.product.minPrice);
@@ -40,7 +48,7 @@ const PriceFilter = () => {
   return (
     <div className={styles.price_filter}>
       <div className={styles.name_filter}>Precio</div>
-      {availablePriceFilter.map((priceRangeValue: any) => (
+      {availablePriceFilter ? availablePriceFilter.values.map((priceRangeValue: Value) => (
         <label key={priceRangeValue.id} className={styles.price_filter_label}>
           {`${priceRangeValue.name}`}
           <input
@@ -55,7 +63,7 @@ const PriceFilter = () => {
             }}
           /><small>&nbsp;({priceRangeValue.results})</small>
         </label>
-      ))}
+      )): null}
       <div className={styles.inputs_container}>
         $
         <input
