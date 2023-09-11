@@ -21,7 +21,7 @@ const useProductData = () => {
         dispatch(setAvailablePriceFilter(data.available_filters))
         dispatch(setLoading(false));
       } catch (error) {
-        dispatch(setError('Hubo un error en la solicitud'));
+        dispatch(setError('Busca algo antes de filtrar'));
         dispatch(setLoading(false));
       }
     };
