@@ -36,6 +36,6 @@ cd meli-challenge
 Esto iniciará la aplicación y podrás acceder a ella en tu navegador visitando la dirección `http://localhost:3000`.
 
 ¡Listo! Si tienes alguna pregunta o necesitas ayuda, no dudes en contactarme.
-<div align="right">
+<p align="right">
 ![GIF Animado](https://media.giphy.com/media/SvFocn0wNMx0iv2rYz/giphy.gif)
-</div>
+</p>
