@@ -1,4 +1,3 @@
-// Testing
 import { renderWithProviders } from "@/src/utils/test-utils";
 import userEvent from "@testing-library/user-event";
 import { screen } from "@testing-library/dom";
