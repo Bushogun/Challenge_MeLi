@@ -37,5 +37,5 @@ Esto iniciará la aplicación y podrás acceder a ella en tu navegador visitando
 
 ¡Listo! Si tienes alguna pregunta o necesitas ayuda, no dudes en contactarme.
 <p align="right">
-![GIF Animado](https://media.giphy.com/media/SvFocn0wNMx0iv2rYz/giphy.gif)
+  <img src="https://media.giphy.com/media/SvFocn0wNMx0iv2rYz/giphy.gif" alt="GIF Animado">
 </p>
