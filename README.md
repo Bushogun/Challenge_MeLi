@@ -14,16 +14,19 @@ Asegúrate de seguir estos pasos para configurar y ejecutar el proyecto en tu en
 
 2. Navega hasta la carpeta del proyecto:
 `cd Challenge_MeLi-cx-challenge-v2``
+Si lo bajaste comprimido, debes descomprimirlo
 
 3. Abre la carpeta en Visual Studio Code o tu editor de código preferido con el siguiente comando:
 `code .`
+O si lo estás trabajando desde el file explorer puedes arrastrar la carpeta `Challenge_MeLi-cx-challenge-v2` a VisualStudio Code
 
-4. Abre una terminal en Visual Studio Code:
+5. Abre una terminal en Visual Studio Code:
 - Ve al menú `"Terminal"` en la parte superior.
-- Selecciona `"Nueva Terminal"` o usa el atajo de teclado (por lo general, `Ctrl+Shift+ñ`) y ejecuta los siguientes comandos: 
+- Selecciona `"Nueva Terminal"` o usa el atajo de teclado (`Ctrl+Shift+ñ`) y ejecuta los siguientes comandos: 
 `cd Challenge_MeLi-cx-challenge-v2`
 `cd app`
-Para posicionarte en la carpeta raiz del proyecto.
+Para posicionarte en la carpeta raiz del proyecto frontend.
+
 ## Instrucciones de Ejecución
 
 5. En la terminal, asegúrate de estar en la carpeta del proyecto y dentro de la carpeta `app`.
@@ -37,6 +40,7 @@ Para posicionarte en la carpeta raiz del proyecto.
 Esto iniciará la aplicación y podrás acceder a ella en tu navegador visitando la dirección `http://localhost:3000`.
 
 ¡Listo! Si tienes alguna pregunta o necesitas ayuda, no dudes en contactarme.
+
 <p align="right">
   <img src="https://media.giphy.com/media/SvFocn0wNMx0iv2rYz/giphy.gif" alt="GIF Animado">
 </p>
