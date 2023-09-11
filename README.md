@@ -40,6 +40,3 @@ Esto iniciará la aplicación y podrás acceder a ella en tu navegador visitando
 <p align="right">
   <img src="https://media.giphy.com/media/SvFocn0wNMx0iv2rYz/giphy.gif" alt="GIF Animado">
 </p>
-=======
-</p>
-
