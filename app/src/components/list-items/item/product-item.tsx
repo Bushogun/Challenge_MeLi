@@ -1,7 +1,7 @@
 import React from 'react';
 import { TbTruckDelivery } from 'react-icons/tb'
 import { IProduct } from '@/src/interfaces/i-products';
-import { capitalizeLocations, capitalizeTitle } from '@/src/utils/stringUtils'
+import { capitalizeLocations, capitalizeTitle } from '@/src/utils/string-utils'
 import styles from './product-item.module.scss'
 
 interface Props {

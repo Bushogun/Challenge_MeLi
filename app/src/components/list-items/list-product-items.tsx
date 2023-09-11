@@ -1,11 +1,11 @@
 import React from 'react';
 import { IProduct } from '@/src/interfaces/i-products';
 import { ProductItem } from './item/product-item';
-import styles from './list-product-items.module.scss';
-import Pagination from './list-product-items-pagination';
-import { usePagination } from '@/src/hooks/usePagination';
 import { useSelector } from 'react-redux';
 import { RootState } from '@/src/store/store';
+import Pagination from './list-product-items-pagination';
+import { usePagination } from '@/src/hooks/usePagination';
+import styles from './list-product-items.module.scss';
 
 interface Props {
   products: IProduct[];

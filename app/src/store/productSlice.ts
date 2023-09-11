@@ -1,9 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
-
 import type { RootState } from "./store";
-
 import { initialStateProductStore } from "./initial-state";
-
 
 const productSlice = createSlice({
   name: "product",

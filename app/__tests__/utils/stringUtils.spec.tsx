@@ -1,4 +1,4 @@
-import { capitalizeLocations, capitalizeTitle } from '@/src/utils/stringUtils';
+import { capitalizeLocations, capitalizeTitle } from '@/src/utils/string-utils';
 
 describe('capitalizeLocations', () => {
   it('should capitalize the first letter of each word', () => {
