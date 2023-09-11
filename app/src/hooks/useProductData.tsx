@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setProducts, setLoading, setError, setAvailablePriceFilter, setAvailableSorts } from '@/src/store/productSlice';
 import { fetchProductData } from '@/src/utils/api-utils';
-import { RootState } from '../store/store';
+import { RootState } from '@/src/store/store';
 
 const useProductData = () => {
   const dispatch = useDispatch();
@@ -21,7 +21,7 @@ const useProductData = () => {
         dispatch(setAvailablePriceFilter(data.available_filters))
         dispatch(setLoading(false));
       } catch (error) {
-        dispatch(setError('Hubo un error en el fetch'));
+        dispatch(setError('Hubo un error en la solicitud'));
         dispatch(setLoading(false));
       }
     };

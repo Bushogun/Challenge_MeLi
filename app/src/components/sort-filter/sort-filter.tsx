@@ -6,9 +6,6 @@ import useProductData from '@/src/hooks/useProductData'
 import { setSelectedSort } from '@/src/store/productSlice';
 import { RootState } from "@/src/store/store";
 
-interface SortFilterProps {
-  availableSorts: ISort[];
-}
 
 export const SortFilter = () => {
   const dispatch = useDispatch();

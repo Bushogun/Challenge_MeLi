@@ -3,7 +3,7 @@ export function capitalizeLocations(text: string): string {
     .split(' ')
     .map((word) => {
       if (word.length === 0) {
-        return ''; // Manejar palabras vacías
+        return ''; 
       }
       return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
     })

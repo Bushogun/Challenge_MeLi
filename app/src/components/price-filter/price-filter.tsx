@@ -8,7 +8,7 @@ const PriceFilter = () => {
   const dispatch = useDispatch();
 
   const availablePriceFilter = useSelector((state: RootState) => {
-    const priceFilter = state.product.availablePriceFilter.find((filter: { id: string; }) => filter.id === "price");
+    const priceFilter = state.product.availablePriceFilter?.find((filter: { id: string; }) => filter.id === "price");
     return priceFilter ? priceFilter.values : [];
   });
 
