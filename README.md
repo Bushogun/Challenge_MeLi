@@ -39,8 +39,7 @@ Esto iniciará la aplicación y podrás acceder a ella en tu navegador visitando
 ¡Listo! Si tienes alguna pregunta o necesitas ayuda, no dudes en contactarme.
 <p align="right">
   <img src="https://media.giphy.com/media/SvFocn0wNMx0iv2rYz/giphy.gif" alt="GIF Animado">
-<<<<<<< HEAD
 </p>
 =======
 </p>
->>>>>>> 399af569a179c7957b138280a652fc7fbcc0b2d7
+
