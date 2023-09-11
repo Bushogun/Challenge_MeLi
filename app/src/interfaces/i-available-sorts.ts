@@ -1,4 +1,4 @@
 export interface ISort {
-    id : string,
+    id: string,
     name: string
 }

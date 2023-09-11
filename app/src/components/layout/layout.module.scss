@@ -1,19 +1,19 @@
-@use '../../styles/colors.module.scss' as *;
+@use '../../styles/colors.module.scss'as *;
 
-.container{ 
+.container {
     margin: 0 17% 50px;
-	align-items: center;
-	justify-content: center;
+    align-items: center;
+    justify-content: center;
 }
 
-.container_filters{
-	display: flex;
-	justify-content: space-between;
+.container_filters {
+    display: flex;
+    justify-content: space-between;
 }
 
 @media screen and (max-width: 768px) {
-	.container_filters{
-		display: block;
-		text-align: center;
-	}
+    .container_filters {
+        display: block;
+        text-align: center;
+    }
 }

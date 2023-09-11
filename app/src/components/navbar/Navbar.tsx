@@ -22,7 +22,7 @@ export const Navbar = () => {
           width="60"
           height="45"
           priority={true}
-          onClick={handleLogoClick} 
+          onClick={handleLogoClick}
         />
       </Link>
       <SearchBarForm />

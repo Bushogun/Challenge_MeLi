@@ -15,8 +15,8 @@ export const SortFilter = () => {
   const availableSorts = useSelector((state: RootState) => state.product.availableSorts);
   useProductData();
   const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-  dispatch(setSelectedSort(e.target.value));
-}
+    dispatch(setSelectedSort(e.target.value));
+  }
 
   return (
     <div className={styles.sort}>
@@ -27,13 +27,13 @@ export const SortFilter = () => {
           onChange={handleChange}
         >
           <option value="" disabled >Selecciona</option>
-          {availableSorts.map((availableSort:any) => (
+          {availableSorts.map((availableSort: any) => (
             <option key={availableSort.id} value={availableSort.id}>
               {availableSort.name}
             </option>
           ))}
         </select>
-    </div>
+      </div>
     </div>
   );
 };

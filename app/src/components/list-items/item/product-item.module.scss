@@ -1,60 +1,69 @@
-@use '../../../styles/colors.module.scss' as *;
+@use '../../../styles/colors.module.scss'as *;
 
-.product_container{
-    margin-top: 4em; 
+.product_container {
+    margin-top: 4em;
     margin-bottom: 10px;
-    hr{
+
+    hr {
         width: 95%;
         border-color: #fff;
     }
-    .info_container{ 
+
+    .info_container {
         display: flex;
 
-        .container_sell_info{
-            img{
+        .container_sell_info {
+            img {
                 margin: 15px;
             }
-            .container_state_info{
+
+            .container_state_info {
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                .free_shipping{
+
+                .free_shipping {
                     padding-top: 5px;
                     color: $color__green--1;
                     font-size: 30px;
                     cursor: pointer;
                 }
-                .condition{
+
+                .condition {
                     padding: 5px;
                     background-color: $color__green--1;
                     color: #fff;
-                    margin: 0px 10px ;
+                    margin: 0px 10px;
                     border-radius: 5px;
                     cursor: pointer;
 
                 }
-                .used{
+
+                .used {
                     background-color: #2236bb;
                 }
             }
         }
     }
 
-    .product_description{
+    .product_description {
         width: 50%;
-        display: block; 
-        .title_price{
+        display: block;
+
+        .title_price {
             padding-top: 3rem;
             font-size: 2.6em;
             color: $color__gray--1;
         }
-        .title{
+
+        .title {
             padding-top: 10px;
             font-size: 1.6em;
             max-width: 20em;
             color: $color__gray--2;
         }
-        .quantity{
+
+        .quantity {
             padding-top: 10px;
             font-size: 1.1em;
             font-weight: 500;
@@ -62,16 +71,18 @@
         }
     }
 
-    .container_details{
+    .container_details {
         display: block;
         margin-left: auto;
         margin-right: auto;
         min-width: 10em;
+
         .state_name {
             padding-top: 3rem;
             font-size: 1em;
             color: $color__gray--3;
         }
+
         .city_name {
             font-size: 1em;
             color: $color__gray--3;
@@ -79,39 +90,46 @@
     }
 
     @media screen and (max-width: 768px) {
-        hr{
+        hr {
             width: 88%;
         }
-        .info_container{ 
+
+        .info_container {
             display: block;
-            .container_sell_info{
-                img{
+
+            .container_sell_info {
+                img {
                     display: flex;
                     margin: auto;
                     margin-top: 2em;
                 }
+
                 display: block;
                 align-items: center;
-                .container_state_info{
+
+                .container_state_info {
                     display: flex;
                 }
             }
-	    }
+        }
 
-        .product_description{
+        .product_description {
             width: 100%;
             padding: 0em 5em;
-            .title_price{
+
+            .title_price {
                 text-align: center;
                 padding-top: 1rem;
                 font-size: 2.2em;
             }
-            .title{
+
+            .title {
                 text-align: center;
                 padding-top: 8px;
                 font-size: 1.2em;
             }
-            .quantity{
+
+            .quantity {
                 text-align: center;
                 padding-top: 5px;
                 font-size: 0.9em;
@@ -119,14 +137,16 @@
             }
         }
 
-        .container_details{
+        .container_details {
             display: flex;
             justify-content: space-around;
             padding-top: 15px;
+
             .state_name {
                 padding-top: 0rem;
                 font-size: 1em;
             }
+
             .city_name {
                 font-size: 1em;
             }
@@ -134,39 +154,45 @@
     }
 
     @media screen and (max-width: 422px) {
-        hr{
+        hr {
             width: 80%;
         }
-	
-        .info_container{ 
+
+        .info_container {
             display: block;
-            .container_sell_info{
-                img{
+
+            .container_sell_info {
+                img {
                     display: flex;
                     margin: auto;
                     margin-top: 2em;
                 }
+
                 display: block;
                 align-items: center;
-                .container_state_info{
+
+                .container_state_info {
                     display: flex;
                 }
             }
         }
 
-        .product_description{
+        .product_description {
             padding: 0em 1em;
-            .title_price{
+
+            .title_price {
                 text-align: center;
                 padding-top: 1rem;
                 font-size: 1.8em;
             }
-            .title{
+
+            .title {
                 text-align: center;
                 padding-top: 6px;
                 font-size: 1em;
             }
-            .quantity{
+
+            .quantity {
                 text-align: center;
                 padding-top: 6px;
                 font-size: 0.9em;
@@ -174,54 +200,62 @@
             }
         }
 
-        .container_details{
+        .container_details {
             display: flex;
             justify-content: space-around;
             padding-top: 10px;
+
             .state_name {
                 padding-top: 0rem;
                 font-size: 0.8em;
             }
+
             .city_name {
                 font-size: 0.8em;
             }
         }
     }
 
-	@media screen and (max-width: 320px) {
-        hr{
+    @media screen and (max-width: 320px) {
+        hr {
             width: 80%;
         }
-	
-        .info_container{ 
+
+        .info_container {
             display: block;
-            .container_sell_info{
-                img{
+
+            .container_sell_info {
+                img {
                     display: flex;
                     margin: auto;
                     margin-top: 2em;
                 }
+
                 display: block;
                 align-items: center;
-                .container_state_info{
+
+                .container_state_info {
                     display: flex;
                 }
             }
         }
 
-        .product_description{
+        .product_description {
             padding: 0em 1em;
-            .title_price{
+
+            .title_price {
                 text-align: center;
                 padding-top: 1rem;
                 font-size: 1.8em;
             }
-            .title{
+
+            .title {
                 text-align: center;
                 padding-top: 6px;
                 font-size: 1em;
             }
-            .quantity{
+
+            .quantity {
                 text-align: center;
                 padding-top: 6px;
                 font-size: 0.9em;
@@ -229,14 +263,16 @@
             }
         }
 
-        .container_details{
+        .container_details {
             display: flex;
             justify-content: space-around;
             padding-top: 10px;
+
             .state_name {
                 padding-top: 0rem;
                 font-size: 0.8em;
             }
+
             .city_name {
                 font-size: 0.8em;
             }

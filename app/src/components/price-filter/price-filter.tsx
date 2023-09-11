@@ -14,7 +14,7 @@ const PriceFilter = () => {
 
   const minPrice = useSelector((state: RootState) => state.product.minPrice);
   const maxPrice = useSelector((state: RootState) => state.product.maxPrice);
-  
+
   const handleMinPriceRadioButton = (x: string, y: string) => {
     dispatch(setMinPrice(x));
     dispatch(setMaxPrice(y));

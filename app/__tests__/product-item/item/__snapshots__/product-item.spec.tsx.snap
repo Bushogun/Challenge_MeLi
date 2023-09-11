@@ -1,0 +1,106 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductItem component should render correctly 1`] = `
+<div>
+  <div
+    class="product_container"
+  >
+    <div
+      class="info_container"
+    >
+      <div
+        class="container_sell_info"
+      >
+        <img
+          alt="Imagen Apple iPhone 11 (128 Gb) - Negro"
+          height="180"
+          src="http://http2.mlstatic.com/D_865864-MLA46114990464_052021-I.jpg"
+          width="180"
+        />
+        <div
+          class="container_state_info"
+        >
+          <p
+            class="condition "
+            title="Artículo nuevo"
+          >
+            new
+          </p>
+          <p
+            class="free_shipping"
+            title="Envío gratis"
+          >
+            <svg
+              fill="none"
+              height="1em"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0 0h24v24H0z"
+                fill="none"
+                stroke="none"
+              />
+              <path
+                d="M7 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"
+              />
+              <path
+                d="M17 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"
+              />
+              <path
+                d="M5 17h-2v-4m-1 -8h11v12m-4 0h6m4 0h2v-6h-8m0 -5h5l3 5"
+              />
+              <path
+                d="M3 9l4 0"
+              />
+            </svg>
+          </p>
+        </div>
+      </div>
+      <div
+        class="product_description"
+      >
+        <h1
+          class="title_price"
+        >
+          $ 
+          501.484
+        </h1>
+        <h2
+          class="title"
+        >
+          Apple Iphone 11 (128 Gb) - Negro
+        </h2>
+        <p
+          class="quantity"
+        >
+          En 
+          12
+           cuotas de $ 
+          94278.99
+        </p>
+      </div>
+      <div
+        class="container_details"
+      >
+        <p
+          class="state_name"
+        >
+          Capital Federal
+        </p>
+        <p
+          class="city_name"
+        >
+          Capital Federal
+        </p>
+      </div>
+    </div>
+    <hr />
+  </div>
+</div>
+`;

@@ -3,10 +3,10 @@ export interface Ifilter {
     name: string;
     type: string;
     values: FilterValue[];
-    }
-    
-    export interface FilterValue {
+}
+
+export interface FilterValue {
     id: string;
     name: string;
     results: number;
-    }
+}

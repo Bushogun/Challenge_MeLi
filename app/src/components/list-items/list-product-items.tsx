@@ -21,7 +21,7 @@ export const ListItems = () => {
   );
 
   if (products.length === 0) {
-    return null; 
+    return null;
   }
 
   return (

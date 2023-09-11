@@ -22,7 +22,7 @@ export async function fetchProductData(
     const response = await fetch(
       `https://api.mercadolibre.com/sites/MLA/search?q=${searchQuery}&limit=${limit}${sortQueryParam}${priceQueryParam}`
     );
-    console.log (response);
+    console.log(response);
     if (!response.ok) {
       throw new Error('Error al cargar productos');
     }

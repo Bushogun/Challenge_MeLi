@@ -13,11 +13,11 @@ export interface Shipping {
 }
 
 export interface Installments {
-    quantity:    number;
-    amount:      number;
+    quantity: number;
+    amount: number;
 }
 
 export interface Address {
     state_name: string;
-    city_name:  string;
+    city_name: string;
 }

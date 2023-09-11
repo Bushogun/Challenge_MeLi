@@ -1,17 +1,19 @@
-@use '../../styles/colors.module.scss' as *;
+@use '../../styles/colors.module.scss'as *;
 
-.navbar{
-	background-color: $color__primary;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+.navbar {
+    background-color: $color__primary;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding: 5px;
-	a {
-		padding-right: 2rem;
-	  }
-	  @media screen and (max-width: 320px) {
-		a {
-			display: none;
-		  }
-	  }
+
+    a {
+        padding-right: 2rem;
+    }
+
+    @media screen and (max-width: 320px) {
+        a {
+            display: none;
+        }
+    }
 }
