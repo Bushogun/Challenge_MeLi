@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setProducts, setLoading, setError, setAvailablePriceFilter, setAvailableSorts } from '@/src/store/productSlice';
 import { fetchProductData } from '@/src/utils/apiUtils';
+import { RootState } from '../store/store';
 
 const useProductData = () => {
   const dispatch = useDispatch();

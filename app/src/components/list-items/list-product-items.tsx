@@ -5,6 +5,7 @@ import styles from './list-product-items.module.scss';
 import Pagination from './list-product-items-pagination';
 import { usePagination } from '@/src/hooks/usePagination';
 import { useSelector } from 'react-redux';
+import { RootState } from '@/src/store/store';
 
 interface Props {
   products: IProduct[];

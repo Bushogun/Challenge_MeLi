@@ -1,21 +1,13 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
+
+import type { RootState } from "./store";
+
+import { initialStateProductStore } from "./initial-state";
+
 
 const productSlice = createSlice({
-  name: 'product',
-  initialState: {
-    searchQuery: '',
-    limit: '20',
-    itemsPerPage: '4',
-    minPrice: '',
-    maxPrice: '',
-    selectedSort: '',
-    priceFilter: '',
-    products: [],
-    loading: false,
-    error: null,
-    availableSorts: [],
-    availablePriceFilter: [],
-  },
+  name: "product",
+  initialState: initialStateProductStore,
   reducers: {
     setSearchQuery: (state, action) => {
       state.searchQuery = action.payload;
@@ -51,10 +43,8 @@ const productSlice = createSlice({
 });
 
 export const {
-  limit,
   setMaxPrice,
   setMinPrice,
-  itemsPerPage,
   setSearchQuery,
   setProducts,
   setLoading,
@@ -65,4 +55,8 @@ export const {
   setPriceFilter,
 } = productSlice.actions;
 
-export default productSlice.reducer;
+
+export const limit = (state: RootState) => state.product.limit
+export const itemsPerPage = (state: RootState) => state.product.itemsPerPage
+
+export default productSlice.reducer
