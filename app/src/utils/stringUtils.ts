@@ -1,8 +1,15 @@
 export function capitalizeLocations(text: string): string {
-    return text.replace(/\b[A-Z]+\b/g, (word) => {
-        return word.charAt(0) + word.slice(1).toLowerCase();
-    });
-}
+    return text
+      .split(' ')
+      .map((word) => {
+        if (word.length === 0) {
+          return ''; // Manejar palabras vacías
+        }
+        return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+      })
+      .join(' ');
+  }
+  
 
 export function capitalizeTitle(text: string): string {
     return text
