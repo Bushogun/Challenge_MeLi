@@ -1,7 +1,7 @@
 export interface StoreProduct {
   searchQuery: string;
   limit: string;
-  itemsPerPage: string;
+  itemsPerPage: number;
   minPrice: string;
   maxPrice: string;
   selectedSort: string;
@@ -15,7 +15,7 @@ export interface StoreProduct {
 export const initialStateProductStore: StoreProduct = {
   searchQuery: "",
   limit: "20",
-  itemsPerPage: "4",
+  itemsPerPage: 4,
   minPrice: "",
   maxPrice: "",
   selectedSort: "",
