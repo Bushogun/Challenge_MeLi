@@ -1,7 +1,7 @@
 # MeLi Challenge
 
 ¡Bienvenido al Meli Challenge!
-
+Antes de comenzar debes comprobar si tienes una versión de nodejs igual o superior a 16 (hazlo con el comando "npm -v") y una versión de npm igual o superior a 9 (hazlo con el comando "npm -v" )
 Este repositorio contiene los archivos y recursos necesarios para correr la solución que he desarrollando basándome en las especificaciones de:
 `https://github.com/mercadolibre/cx-frontend-challenge/tree/cx-challenge-v2`
 
